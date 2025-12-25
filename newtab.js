@@ -20,15 +20,18 @@ function render() {
         <span class="checkmark"></span>
       </label>
       <span class="text">${todo.text}</span>
+      <button class="delete-btn" title="Delete">✕</button>
     `;
 
+    // Checkbox toggle
     li.querySelector("input").addEventListener("change", () => {
       todo.done = !todo.done;
       save();
       render();
     });
 
-    li.querySelector(".text").addEventListener("click", () => {
+    // Delete button
+    li.querySelector(".delete-btn").addEventListener("click", () => {
       todos.splice(index, 1);
       save();
       render();
@@ -38,6 +41,7 @@ function render() {
   });
 }
 
+// Add new todo
 input.addEventListener("keydown", (e) => {
   if (e.key === "Enter" && input.value.trim()) {
     todos.push({ text: input.value.trim(), done: false });
