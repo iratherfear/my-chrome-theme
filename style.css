@@ -32,7 +32,19 @@ body::before {
 }
 
 /* ===== DASHBOARD ===== */
-.container {
+.container-fav {
+  height: 500px;
+  width: 500px;
+  max-width: 94%;
+  background: #000000; /* pitch black */
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9);
+  z-index: 1;
+  margin-right: 100px;
+}
+
+.container-todo {
   width: 560px;
   max-width: 94%;
   background: #000000; /* pitch black */
@@ -40,6 +52,7 @@ body::before {
   padding: 32px;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9);
   z-index: 1;
+  margin-left: 100px;
 }
 
 /* ===== TITLE ===== */
@@ -53,7 +66,7 @@ h1 {
 /* ===== FAVORITES ===== */
 .favorites {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 14px;
   margin-bottom: 26px;
 }
@@ -65,7 +78,7 @@ h1 {
   border-radius: 12px;
   background: linear-gradient(135deg, #2f2f2f, #242424);
   color: #ffffff;
-  font-size: 13px;
+  font-size: 20px;
   font-weight: 500;
   transition: transform 0.15s ease, background 0.15s ease;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
@@ -188,3 +201,52 @@ ul {
   color: #777;
   margin-top: 14px;
 }
+
+/* ===== FLOATING PLUS BUTTON ===== */
+.fab {
+  position: absolute;
+  bottom: -24px;   /* floats outside container */
+  right: -24px;
+
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+
+  background: #4ade80;
+  color: #FFF;
+  border: none;
+
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 0;
+
+  cursor: pointer;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fab:hover {
+  transform: scale(1.08);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.8);
+}
+
+.fab:active {
+  transform: scale(0.96);
+}
+
+/* .fav-site {
+  padding-left: 12px;               
+  background-image: none;        
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 16px 16px;
+  transition: padding-left 0.2s ease;
+}
+
+.fav-site:hover {
+  padding-left: 36px;              
+  background-image: var(--favicon); 
+} 
+*/
+

@@ -41,6 +41,31 @@ function render() {
   });
 }
 
+function addFaviconForEachSite() {
+  console.log("Fav call")
+  document.querySelectorAll('.container-fav a').forEach(a => a.classList.add('fav-site'));
+  document.querySelectorAll('.container-fav a').forEach(a => {
+  a.classList.add('fav-site');
+
+  const hostname = new URL(a.href).hostname;
+
+  a.style.setProperty(
+    '--favicon',
+    `url("https://www.google.com/s2/favicons?domain=${hostname}&sz=64")`
+  );
+});
+
+
+
+
+  const links = document.querySelectorAll('.container-fav a');
+
+  const hrefs = Array.from(links).map(a => a.href);
+
+  console.log(hrefs);
+
+}
+
 // Add new todo
 input.addEventListener("keydown", (e) => {
   if (e.key === "Enter" && input.value.trim()) {
@@ -52,3 +77,4 @@ input.addEventListener("keydown", (e) => {
 });
 
 render();
+addFaviconForEachSite();
